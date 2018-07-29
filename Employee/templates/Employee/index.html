@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if latest_employee_list %}
+    <h3>Employees in the system</h3>
+    <ul>
+        {% for employee in latest_employee_list %}
+            <li>
+                <a href="{% url 'Employee:detail' employee.id %}">
+                    {{ employee.first_name }}
+                    {{ employee.last_name }}
+                    {{ employee.pk }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Employees added yet.</p>
+{% endif %}
+{#<form action="{% url 'Employee:add_emp' %}" method="GET">#}
+{#    <input id="submit" type="button" value="Add Employee" onclick=""/>#}
+{#</form>#}
+<a href="{% url 'Employee:add_emp' %}">
+    <button>Add Employee</button>
+</a>
+</body>
+</html>

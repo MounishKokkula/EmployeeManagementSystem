@@ -1,0 +1,9 @@
+<form action="/Employee/email_emp/" method="post">
+    {% csrf_token %}
+    <label for="to_email">Subscribe to recieve newsletter : </label>
+    <input id="to_email" type="email" name="to_email" >
+    <br/>
+
+    <input type="submit" value="Email">
+
+</form>

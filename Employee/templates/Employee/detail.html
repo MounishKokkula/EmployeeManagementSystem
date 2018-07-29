@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if single_employee %}
+    <ul>
+
+        <li>{{ single_employee.first_name }}
+            {{ single_employee.last_name }}</li>
+
+    </ul>
+{% else %}
+    <p>No Employees added yet.</p>
+{% endif %}
+
+
+</body>
+</html>
